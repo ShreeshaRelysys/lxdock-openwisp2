@@ -1,0 +1,17 @@
+---
+
+name: ansible-openwisp2
+image: ubuntu/xenial
+mode: pull
+
+containers:
+  - name: openwisp
+    hostnames:
+      - openwisp.lxd
+
+provisioning:
+  - type: ansible
+    playbook: provisioning/playbook.yml
+    groups:
+      openwisp2:
+        - openwisp
